@@ -6,6 +6,7 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet as wn
@@ -135,7 +136,7 @@ def main():
     st.subheader("Query interviewee responses based on a keyword")
 
     # Text input field
-    user_text = st.text_input("Enter the keyword:")
+    user_text = st.text_input("Enter the keywords separated by a comma and space:")
 
 
 
