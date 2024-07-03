@@ -1,2 +1,3 @@
 python-docx
 nltk
+streamlit==1.29.0
