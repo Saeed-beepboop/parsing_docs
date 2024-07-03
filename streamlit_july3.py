@@ -167,11 +167,11 @@ def main():
     outcome = tidy_text(user_text)
 
     # Submit button
-    if st.button("Submit category"):
+    if st.button("Submit Search Terms"):
         # Process the entered text when the submit button is clicked
         if user_text:
-            st.success('Category and subcategory submitted successfully!')
-            st.write(f"List of questions and responses containing the following category and subcategories:")
+            st.success('Categories and subcategories submitted successfully!')
+            st.write(f"List of questions and responses containing the following categories and subcategories:")
 
             catsubcat_dict = {}
             for cats in outcome:
@@ -184,13 +184,13 @@ def main():
             for num in range(0,len(catsubcat_dict.keys())):
                 st.write(f"**Category {num+1}**: {listkeys_catsubcat_dict[num]}")
                 for n in range(0,len(catsubcat_dict[listkeys_catsubcat_dict[num]])):
-                    st.markdown(f"- Subcategory {n+1}: {catsubcat_dict[listkeys_catsubcat_dict[num]][n]}")
+                    st.markdown(f"**Subcategory {n+1}**: {catsubcat_dict[listkeys_catsubcat_dict[num]][n]}")
 
                     phrase_i, phrase_p = separate_interview_sentences(catsubcat_dict[listkeys_catsubcat_dict[num]][n], lines)
                     # Display each item of the first list
                     # st.write(f"List of questions and responses containing '{user_text}':")
                     for idx, (item1, item2) in enumerate(zip(phrase_i, phrase_p), start=1):
-                        st.markdown(f"**Instance {idx}**")
+                        st.markdown(f"- Instance {idx}")
                         st.write(f"Question: {item1}")
                         st.write(f"Response: {item2}")
 
