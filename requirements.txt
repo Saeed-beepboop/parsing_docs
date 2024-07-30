@@ -1,3 +1,4 @@
 python-docx
 nltk
 streamlit==1.29.0
+gensim==4.3.3
